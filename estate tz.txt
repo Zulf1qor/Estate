@@ -1,0 +1,85 @@
+Estate sales:
+models:
+
+estate:
+0.id = char
+1.rent = bool
+2.volume = char
+3.status = char choices
+4.price = decimal 
+5.type = char choices
+6.location = char
+7.description = char
+8.img = img regex validator
+9.rooms = int 
+
+customers:
+1.name = char
+2.sur_name = char
+3.age = char 
+4.phone_number = char regex validators
+5.password_ser = char
+6.password_number = int
+7.salary = p.int
+8.status = decimalabout = char
+
+agents:
+1.name = char
+2.sur_name = char
+3.age = char
+4.phone_number = char regex validators
+5.password_ser = char
+6.password_number = int
+7.salary = p.int
+8.status = decimal
+9.hire_date = Datafield.autonull 
+
+
+meeting:
+1.custmers = fk to = customers
+2.property= for estate related name-building
+3.agents fk to=agents 
+4.date = datetime 
+
+building:
+1.id = char 
+2.location = char 
+3.address = char 
+4.img = img 
+5.price = decimal
+6.volume = char 
+7.rooms = int 
+8.floor = int null blank
+9.rant = bool
+
+
+History_contracts:
+1.number = char
+2.custmers = fk to = customers
+3.property = for estate related name-building
+4.agents =fk to agents 
+5.date = datetime 
+6.contract_amount = Deciminal
+7.contract_duration = Int
+
+
+Payment:
+1.customers = Fk Customers
+2.estate = Fk Estate
+3.payment_date = Datatimefield
+4.amount_paid = Deciminal
+5.payment_method = Char
+
+
+PaymentReciept:
+1.payment = Fk Payment
+2.receipt = Img
+3.data_issued = Datatime autonow
+
+
+
+
+
+
+
+
