@@ -2,6 +2,38 @@ from django.db import models
 from django.core.validators import RegexValidator
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.contrib.auth.models import AbstractUser
+import qrcode
+from io import BytesIO
+from django.core.files import File
+
+class User(AbstractUser):
+    GENDER=(
+        ('Erkak', "Erkak"),
+        ('Ayol', "Ayol")
+    )
+    gender = models.CharField(max_length=55, choices=GENDER, blank=False)
+    phone_number = models.CharField(max_length=13, validators=[
+        RegexValidator(
+            regex='^[\+]9{2}8{1}[0-9]{9}$',
+            message='Invalide phone number',
+            code='Invalid number'
+        )
+    ])
+    img= models.ImageField(upload_to='user-imgages/', validators=[
+        RegexValidator(
+            regex='^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+            message='Invalide img ',
+            code='Invalid photos'
+        )
+    ])
+    bio = models.CharField(max_length=255)
+
+    class Meta(AbstractUser.Meta):
+        swappable = 'AUTH_USER_MODEL'
+        verbose_name = 'User'
+        verbose_name_plural = 'Users'
+
 
 
 class Estate(models.Model):
