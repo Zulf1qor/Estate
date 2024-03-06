@@ -15,3 +15,15 @@ class UserAdmin(UserAdmin):
         (_('Extra'), {'fields': ('gender','phone_number','img','bio','birthday','month_of_birth','born_smelly')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )
+
+admin.site.register(models.Estate)
+admin.site.register(models.Cassa)
+admin.site.register(models.Customers)
+admin.site.register(models.History_contracts)
+admin.site.register(models.Location)
+admin.site.register(models.Building)
+admin.site.register(models.Payment)
+admin.site.register(models.PaymentReciept)
+admin.site.register(models.Agents)
+admin.site.register(models.Meeting)
+
