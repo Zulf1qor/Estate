@@ -22,7 +22,7 @@ urlpatterns = [
     path('building-filter_by_rent/', building_filter_by_rent),
     path('history-filter_by_number/', history_filter_by_number),
     path('history-filter_by_date/', history_filter_by_date),
-    path('cassa-filter_by_name/', cassa_filter_by_name),
     path('payment-filter_by_payment_date/', payment_filter_by_payment_date),
     path('paymentreceipt-filter_by_payment/', paymentreceipt_filter_by_payment),
+    path('cassa-filter_by_name/', cassa_filter_by_name),
 ]

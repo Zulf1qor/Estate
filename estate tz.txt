@@ -76,6 +76,10 @@ PaymentReciept:
 2.receipt = Img
 3.data_issued = Datatime autonow
 
+Location:
+1.latitut
+2.lotitut
+
 
 
 
