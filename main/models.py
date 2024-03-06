@@ -128,6 +128,9 @@ class PaymentReciept(models.Model):
             ),])
     data_issued = models.DateTimeField(auto_now=True)
 
+class Location(models.Model):
+    lot = models.CharField(max_length=255)
+    lat = models.CharField(max_length=255)
 
 class Cassa(models.Model):
     name = models.CharField(max_length=100)
@@ -138,6 +141,3 @@ class Cassa(models.Model):
     def __str__(self):
         return self.name
 
-class Location(models.Model):
-    lot = models.CharField(max_length=255)
-    lat = models.CharField(max_length=255)
